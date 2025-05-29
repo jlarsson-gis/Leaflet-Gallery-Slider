@@ -1,0 +1,37 @@
+#leafletSliderContainer{
+	width: 1024px; /* Change to any value you like in pixels or percent */
+	height: 768px; /* Change to any value you like in pixels or percent */
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+}
+#map{
+	width: 100%;
+	display: block;
+	flex-grow: 1;
+}
+
+#MonthDate{
+	margin-bottom: 0px;
+}
+
+input[type=range] {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+	display: block;
+}
+
+#years {
+	width:100%;
+	padding: 0px;
+	display: block;
+}
+#years div{
+	text-align:center;
+	display:inline-block;
+	margin: 0px;
+	padding: 0px;
+	overflow: clip;
+}
