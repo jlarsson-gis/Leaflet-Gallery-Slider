@@ -70,3 +70,4 @@ After completing all of these steps, I found that my iamges were excessively lar
 ## TODO:
 * Finish commenting code
 * Use Javascript to set up elements inside leafletSliderContainer to make the HTML document cleaner and reduce possibility for any of the elements to be forgotten
+* Improve mobile-friendliness and overall user-friendliness where needed; It works as intended on mobile platforms already, but I want to look into ways to further improve the mobile experience with the widget
