@@ -2,7 +2,9 @@
 
 Use an HTML slider to control a leaflet map containing a gallery of pictures from specific defined locations.
 
-A live demo is available on https://jlarss.me.
+A live demo is available on https://jlarss.me as part of my visual resume/portfolio website.
+
+![Screenshot_20250529_100926](https://github.com/user-attachments/assets/da821b0f-3b59-4fc9-b6bf-e022cd9c86f2)
 
 ***Very early beta, may be extremely finnicky and/or buggy.***
 
