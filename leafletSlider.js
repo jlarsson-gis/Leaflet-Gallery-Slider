@@ -87,7 +87,7 @@ function lstrip(str, unwanted) {
     return str.startsWith(unwanted) ? str.slice(1, str.length) : str;
 };
 imageBaseHref = rstrip(rstrip(lstrip(imageBaseHref, "."), "\\"), "/")
-if(imageBaseHref != ""){imageBaseHref+"/"}
+if(imageBaseHref != ""){imageBaseHref+="/"}
 
 chooseDate()
 		
@@ -99,6 +99,7 @@ function chooseDate(){
     	}
 	}
 	zIndexVariable = 0
+	eventsAtStep = []
 	if(document.getElementById("progress").value == slider_maximum){
 		zIndexVariable = -2000
 		var filteredphotos = L.geoJson(photopoints, {pointToLayer: function (feature, latlng) {
@@ -115,9 +116,7 @@ function chooseDate(){
 		}).addTo(myLayer);
 
 		document.getElementById("MonthDate").innerHTML = photomonths[document.getElementById("progress").value][3]
-
-		eventsAtStep = []
-		for (var i = 0; i < events.length && eventsAtStep.length <= max_concurrent_events; i++) {
+		for (var i = 0; i < events.length && eventsAtStep.length < max_concurrent_events; i++) {
 			monthsrange = [[events[i]["startMonth"], events[i]["startYear"]],[events[i]["endMonth"], events[i]["endYear"]]]
 			selMonthRow = photomonths[document.getElementById("progress").value]
 			month = [selMonthRow[1], selMonthRow[2]]
@@ -125,12 +124,13 @@ function chooseDate(){
 				eventsAtStep.push(events[i]["name"])
 			}
 		}
-		while(eventsAtStep.length < max_concurrent_events){
-			eventsAtStep.push("")
-		}
-		document.getElementById("Stage").innerHTML = eventsAtStep.join("<br>")
-					
 	}
+	while(eventsAtStep.length < max_concurrent_events){
+		eventsAtStep.push("&nbsp;")
+	}
+	document.getElementById("Stage").innerHTML = eventsAtStep.join("<br>")
+					
+
 	
     function zIndexFunction(feature){
 	    index = 0

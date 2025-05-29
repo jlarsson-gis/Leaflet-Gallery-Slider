@@ -22,31 +22,46 @@
 			//Configuration for leafletSlider.js
 
 			var photosymbol = 'Map_marker_icon_Nicolas_Mollet_Photo_Media_Default.png' // Photo marker symbol
-			var max_concurrent_events = 3 // Maximum number of concurrent events. This is to ensure the correct amount of space is reserved above the map. If this threshold is exceeded, then any events more than the threshold number will not be shown at a given slider step.
-			var imageBaseHref = './' //Where are you locating the directory you used as input to extractLocations.py, relative to the webpage you are embedding this on. Whether or not you include a trailing slash in this is dependent on whether you used a trailing slash for directory_path when running extractLocations.py. It does not matter which way you choose, but it needs to be consistent or else it will not work. I include a trailing slash in all of my examples.
+			var max_concurrent_events = 2 // Maximum number of concurrent events. This is to ensure the correct amount of space is reserved above the map. If this threshold is exceeded, then any events more than the threshold number will not be shown at a given slider step.
+			var imageBaseHref = 'images/' //Where are you locating the directory you used as input to extractLocations.py, relative to the webpage you are embedding this on. Whether or not you include a trailing slash in this is dependent on whether you used a trailing slash for directory_path when running extractLocations.py. It does not matter which way you choose, but it needs to be consistent or else it will not work. I include a trailing slash in all of my examples.
 
 			var events = [
-			//  Example events, event 1 which started in Jan 1970 and ended in Dec 1971 and event 2 which started in July 1970 and ended in Apr 1971.
-			//	{
-			//		name: "Example event 1", //Name of event
-			//		startMonth: 1,  //Start month, 1-12
-			//		startYear: 1970, // Start year
-			//		endMonth: 12, // End month, inclusive
-			//		endYear: 1971 // End year
-			//	},
-			//	{
-			//		name: "Example event 2", //Name of event
-			//		startMonth: 7,  //Start month, 1-12
-			//		startYear: 1970, // Start year
-			//		endMonth: 4, // End month, inclusive
-			//		endYear: 1971 // End year
-			//	}
+			//  Example events, erase these and use this format to create your own:
+			//  {
+			//  	name: "Example event 1", //Name of event
+			//  	startMonth: 6,  //Start month, 1-12
+			//  	startYear: 2022, // Start year
+			//  	endMonth: 12, // End month, inclusive, 1-12
+			//  	endYear: 2022 // End year
+			//  }
+			//
+				{
+					name: "Example event 1", //Name of event
+					startMonth: 6,  //Start month, 1-12
+					startYear: 2022, // Start year
+					endMonth: 12, // End month, inclusive
+					endYear: 2022 // End year
+				},
+				{
+					name: "Example event 2", //Name of event
+					startMonth: 7,  //Start month, 1-12
+					startYear: 2023, // Start year
+					endMonth: 9, // End month, inclusive
+					endYear: 2023 // End year
+				},
 				{
 					name: "Example event 3", //Name of event
-					startMonth: 1,  //Start month, 1-12
-					startYear: 2019, // Start year
-					endMonth: 5, // End month, inclusive
-					endYear: 2025 // End year
+					startMonth: 8,  //Start month, 1-12
+					startYear: 2022, // Start year
+					endMonth: 8, // End month, inclusive
+					endYear: 2023 // End year
+				},
+				{
+					name: "Example event 4", //Name of event
+					startMonth: 8,  //Start month, 1-12
+					startYear: 2022, // Start year
+					endMonth: 8, // End month, inclusive
+					endYear: 2023 // End year
 				}
 			]
 		</script>
@@ -57,7 +72,7 @@
 
 		<div id="leafletSliderContainer">
 			<h4 id="MonthDate">All Months</h4>
-			<span id="Stage"><br></span>
+			<span id="Stage"></span>
 			<br>
 			<input type="range" class="slider" id="progress" oninput="chooseDate()" onchange="chooseDate()">
 			<span id="years"><div>Not initialized</div></span>
